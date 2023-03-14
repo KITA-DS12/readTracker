@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  server:
+    # compose.yaml, Dockerfileのパスを指定
+    build:
+      context: .
+      dockerfile: ./server/Dockerfile
+    # ./server(ホストマシン)を/server(コンテナ)にマウント
+    volumes:
+      - ./server:/server
+    # ホストマシン, コンテナ間でポート番号をマッピング
+    ports:
+      - 8888:8888
