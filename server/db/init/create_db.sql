@@ -1,1 +1,1 @@
-CREATE DATABASE read_tracker;
+CREATE DATABASE IF NOT EXISTS read_tracker;
