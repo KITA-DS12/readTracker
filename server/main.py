@@ -3,12 +3,12 @@ import uvicorn
 
 from db.database import engine
 from db import models
-from db.routers import user
+from db import routers
 
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
-app.include_router(user.router)
+app.include_router(routers.router)
 
 
 if __name__ == "__main__":
