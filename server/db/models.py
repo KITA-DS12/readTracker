@@ -10,8 +10,7 @@ class User(Base):
     """
     Userテーブルの定義
 
-    Attributes
-    ----------
+    Attributes ----------
     id : Column(Integer)
         ユーザID
     name : Column(String)
@@ -46,6 +45,8 @@ class Note(Base):
         ノートの本文
     created_at : Column(DateTime)
         作成日
+    owner_id : Column(Integer)
+        作成者のID
     """
 
     __tablename__ = "notes"
