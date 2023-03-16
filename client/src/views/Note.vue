@@ -5,7 +5,6 @@ import axios from 'axios';
 
 const router = useRouter()
 
-const valid = ref(false)
 const createDialog = ref(false)
 const updateDialog = ref(false)
 
@@ -122,7 +121,7 @@ onMounted(() => {
           </v-card-title>
           <v-divider />
           <v-card-text class="pa-5">
-              <v-form v-model="valid">
+              <v-form>
                   <v-text-field
                     :rules="textRules"
                     v-model="title"
@@ -141,7 +140,7 @@ onMounted(() => {
                   <v-card-actions class="justify-center pa-3">
                     <v-btn
                       @click="createNote"
-                      :disabled="!valid"
+                      :disabled="!title || !content"
                       color="info"
                       class="font-weight-bold text-h6"
                       flat

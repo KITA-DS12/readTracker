@@ -85,7 +85,8 @@ def read_user_by_name(db: Session, user_name: str):
     user : models.User
         ユーザ名が一致するUserモデル
     """
-    return db.query(models.User).filter(models.User.name == user_name).first()
+    user = db.query(models.User).filter(models.User.name == user_name).first()
+    return user
 
 
 def create_user_note(db: Session, note: schemas.NoteCreate, user_id: int):

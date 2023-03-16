@@ -209,8 +209,8 @@ def delete_note(note_id: int, db: Session = Depends(get_db)):
 
     Returns
     -------
-    note_id : int
-        削除したNote ID
+    delete_note : models.Note
+        空のNoteモデル
     """
 
     db_note = crud.read_note_by_id(db=db, note_id=note_id)
@@ -219,5 +219,5 @@ def delete_note(note_id: int, db: Session = Depends(get_db)):
         raise HTTPException(
             status_code=400, detail="Note does not exist")
 
-    delete_id = crud.delete_note_by_id(db=db, note_id=note_id)
-    return delete_id
+    delete_note = crud.delete_note_by_id(db=db, note_id=note_id)
+    return delete_note

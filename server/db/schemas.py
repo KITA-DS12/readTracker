@@ -55,7 +55,7 @@ class NoteBase(BaseModel):
     content : str | None, default None
         ノートの本文
     """
-    title: str = Field(..., title="Note Title")
+    title: str = Field("", title="Note Title")
     content: str | None = Field(None, title="Note Content")
 
 
